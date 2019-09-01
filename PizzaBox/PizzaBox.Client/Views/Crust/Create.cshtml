@@ -1,0 +1,26 @@
+@model PizzaBox.Domain.Models.Crust
+
+<form action="/crust/create" method="post">
+
+  <!-- <label for="name">Name</label>
+  <input type="text" id="name" name="name">
+  
+
+  <label for="price">Price</label>
+  <input type="number" id="price" name="price"> -->
+
+  <p>Please select a crust</p>
+
+  <fieldset name="Checkbox">
+    <label><input type="radio" name="name" value="traditional">Traditional</label>
+    <label><input type="radio" name="name" value="thin">Thin</label>
+    <label><input type="radio" name="name" value="handtossed">Hand Tossed</label>
+    <label><input type="radio" name="name" value="stuffed">Stuffed</label>
+    <label><input type="radio" name="name" value="deepdish">Deep Dish</label>
+  </fieldset>
+
+
+  <button type="submit">Add Crust</button>
+
+
+</form>
