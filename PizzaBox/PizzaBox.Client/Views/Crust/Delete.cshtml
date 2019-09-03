@@ -1,0 +1,11 @@
+@model List<PizzaBox.Domain.Models.Crust>
+
+<ul>
+  @foreach (var item in Model)
+  {
+    <form action="/Crust/Delete" method="delete">
+    <li>@item.Name</li> 
+    <button type="submit" id="delete" name="delete" value="delete">delete</button>
+    </form>
+  }
+</ul>

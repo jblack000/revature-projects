@@ -60,12 +60,18 @@ namespace PizzaBox.Client.Controllers
       return RedirectToAction("Read");
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete]
     public IActionResult Delete(Crust crust)
     {
       _db.Crusts.Remove(_db.Crusts.Single(c => c.Id == crust.Id));
 
       return RedirectToAction("Read");
+    }
+
+    [HttpGet]
+    public IActionResult Delete()
+    {
+      return View();
     }
   }
 }

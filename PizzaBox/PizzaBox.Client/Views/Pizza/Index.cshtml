@@ -1,0 +1,52 @@
+@model PizzaBox.Domain.Models.PizzaSubmitForm
+
+@{
+  Layout = "../Shared/_Layout.cshtml";
+}
+
+<form action="/pizza/Submit" method="post">
+  <fieldset>
+    <h2>Please select a size</h2>
+    @foreach (var sizeobj in @ViewBag.size)
+    {
+      <label><input type="radio" value="@sizeobj.Id" asp-for="@Model.SelectedSizeId">@sizeobj.Name $ @sizeobj.Price</label>
+        
+    }    
+  </fieldset>
+
+  <fieldset>
+    <h2>Please select a crust</h2>
+    @foreach (var crustobj in @ViewBag.crust)
+    {
+      <label><input type="radio" value="@crustobj.Id" asp-for="@Model.SelectedCrustId">@crustobj.Name $ @crustobj.Price</label>
+        
+    }
+  </fieldset>
+
+  <!-- <fieldset>
+    <h2>Please select your toppings</h2>
+
+    @foreach (var toppingobj in @ViewBag.topping)
+    {
+
+      <select>
+        <option value="">Please choose a topping</option>
+        <option asp-for="@Model.SelectedToppingId" value="@toppingobj.Id">@toppingobj.Name $ @toppingobj.Price</option>
+      </select>
+       
+    }
+ 
+  </fieldset> -->
+
+    <fieldset name="Checkbox">
+      <h2>Please select your toppings</h2>
+      @foreach (var toppingobj in @ViewBag.topping)
+      {
+      <label><input type="checkbox" name="SelectedToppingId" value="@toppingobj.Id">@toppingobj.Name @toppingobj.Price</label>
+          
+      }
+
+    </fieldset>
+
+  <button type="submit">Submit</button>
+</form>
